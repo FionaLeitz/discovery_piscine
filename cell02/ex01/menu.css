@@ -1,0 +1,24 @@
+div {width: 20%;
+	float: left;
+	margin: 20;}
+
+#menu, #menu ul {padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 200px;}
+
+#menu li {position: relative;
+	background: green;
+	color: yellow;
+	text-indent: 20px;}
+
+#menu a {display: block;
+	text-decoration: none;
+	color: black;
+	text-indent: 10px;}
+
+#menu ul {position: absolute;
+	display: none;}
+
+#menu li:hover ul {top: 18;
+	display: block;}

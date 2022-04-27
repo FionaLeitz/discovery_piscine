@@ -4,3 +4,5 @@ table {border-collapse: collapse;
 td {border: 1px solid black;
 	width: 50%;
 	height: 100%;}
+.one {background-color: rgb(135, 161, 87);}
+.two {background-color: rgb(209, 131, 57);}
