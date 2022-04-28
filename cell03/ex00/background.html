@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Click Me!</title>
+		<link rel="stylesheet" href="background.css">
+		<script type="text/javascript">
+			function func()
+			{
+				document.body.style.backgroundColor = getRandomColor();
+			}
+			
+		function getRandomColor() {
+			var letters = "0123456789ABCDEF".split('');
+			var color = "#";
+			for (var i = 0; i < 6; i++ ) {
+				color += letters[Math.floor(Math.random() * 16)];
+			}
+			return color;
+		}
+		</script>
+	</head>
+	<body>
+		<button onclick="func()">Click me!</button>
+	</body>
+</html>

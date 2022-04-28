@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Balloon</title>
+	</head>
+	<style>
+		div {
+			background: red;
+			position: relative;
+			left: 50%;
+			top: 20%;
+			transform: translateX(-50%) translateY(-50%);
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+		}
+	</style>
+	<script type="text/javascript">
+		function ft_click()
+		{
+			var balloon = document.getElementById('balloon');
+			var color = balloon.style;
+			var size = balloon.offsetWidth;
+			var newsize;
+
+			if (color.background == "green")
+				color.background = "blue";
+			else if (color.background == "blue")
+				color.background = "red";
+			else
+				color.background = "green";
+
+			if (size <= 410)
+			{
+				newsize = size + 10;
+				balloon.style.width = newsize + 'px';
+				balloon.style.height = newsize + 'px';
+			}
+			else
+			{
+				newsize = 200;
+				balloon.style.width = newsize + 'px';
+				balloon.style.height = newsize + 'px';
+			}
+		}
+		function ft_mouseleave()
+		{
+			var balloon = document.getElementById('balloon');
+			var color = balloon.style;
+			var size = balloon.offsetWidth;
+			var newsize;
+
+			if (color.background == "blue")
+				color.background = "green";
+			else if (color.background == "green")
+				color.background = "red";
+			else
+				color.background = "blue";
+			
+			if (size >= 205)
+			{
+				newsize = size - 5;
+				balloon.style.width = newsize + 'px';
+				balloon.style.height = newsize + 'px';
+			}
+		}
+	</script>
+	<body>
+		<div id="balloon" onclick="ft_click()" onmouseleave="ft_mouseleave()">
+		</div>
+	</body>
+</html>
