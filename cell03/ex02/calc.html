@@ -1,0 +1,47 @@
+
+<!--			console.log(balloon.style.width);
+			console.log(balloon.style.height);
+		ValueAsNumber() -->
+
+<html>
+	<head>
+		<title>It's over 9000 !</title>
+	</head>
+
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		function ft_atoi(x)
+		{
+			let nbr;
+			nbr = parseInt(x);
+			if (!(Number.isInteger(nbr)))
+				return -1;
+			if (nbr >= 0)
+				return nbr;
+			return -1;
+		}
+
+		function getVal()
+		{
+			var val = document.querySelector('input').value;
+			let nbr1 =
+			console.log(nbr1);
+		}
+	</script>
+
+	<body>
+		<input type="text" onblur="getVal()">
+		<select>
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+			<option>%</option>
+		</select>
+		<input type="text">
+		<input type="submit" value="Try me!">
+	</body>
+</html>
