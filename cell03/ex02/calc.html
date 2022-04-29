@@ -1,47 +1,83 @@
 
-<!--			console.log(balloon.style.width);
-			console.log(balloon.style.height);
-		ValueAsNumber() -->
-
 <html>
 	<head>
 		<title>It's over 9000 !</title>
 	</head>
-
 	<style>
 
 	</style>
-
 	<script type="text/javascript">
 		function ft_atoi(x)
 		{
-			let nbr;
-			nbr = parseInt(x);
-			if (!(Number.isInteger(nbr)))
-				return -1;
-			if (nbr >= 0)
-				return nbr;
-			return -1;
-		}
+			var nbr;
 
+			if (isNaN(x) == true)
+				return -1;
+			nbr = parseFloat(x);
+			if (Number.isInteger(nbr) == false)
+				return -1
+			nbr = parseInt(x);
+			if (nbr < 0)
+				return -1;
+			return nbr;
+		}
 		function getVal()
 		{
-			var val = document.querySelector('input').value;
-			let nbr1 =
-			console.log(nbr1);
+			let select = document.getElementById('select').value;
+			let val1 = document.getElementById('left').value;
+			let val2 = document.getElementById('right').value;
+			var nbr1 = ft_atoi(val1);
+			var nbr2 = ft_atoi(val2);
+			if (nbr1 == -1 || nbr2 == -1)
+			{
+				alert("Error :(");
+				return ("no");
+			}
+			if (select == "+")
+				return (nbr1 + nbr2);
+			else if (select == "-")
+				return (nbr1 - nbr2);
+			else if (select == "*")
+				return (nbr1 * nbr2);
+			else if (select == "/")
+			{
+				if (nbr2 == 0)
+					return ("It's over 9000!");
+				return (nbr1 / nbr2);
+			}
+			else if (select == "%")
+			{
+				if (nbr2 == 0)
+					return ("It's over 9000!");
+				return (nbr1 % nbr2);
+			}
 		}
-	</script>
+		function calcul()
+		{
+			var result;
 
+			result = getVal();
+			if (result == "no")
+				return 0;
+			console.log(result);
+			alert(result);
+		}
+		function ft_time()
+		{
+			alert("Please, use me..."), 30000;
+		}
+		setInterval(ft_time, 30000);
+	</script>
 	<body>
-		<input type="text" onblur="getVal()">
-		<select>
+		<input type="text" id="left">
+		<select id="select">
 			<option>+</option>
 			<option>-</option>
 			<option>*</option>
 			<option>/</option>
 			<option>%</option>
 		</select>
-		<input type="text">
-		<input type="submit" value="Try me!">
+		<input type="text" id="right">
+		<input type="submit" value="Try me!" onclick="calcul()">
 	</body>
 </html>
